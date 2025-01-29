@@ -1,112 +1,163 @@
-/* Global Reset */
-* {
+body {
+    font-family: 'Figtree', Arial, sans-serif; /* Use Figtree as the primary font */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* Body Styling */
-  body {
-    font-family: 'Outfit', sans-serif;
-    background-color: #d6e2f0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: #f4f4f4;
   }
 
-  /* Container */
-  .container {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    background-color: #ffcc00; /* Yellow background */
+    padding: 100px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Add some space between the card and the attribution */
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease;
+    border: 2px solid #000;
+    box-shadow: 8px 8px 0 hsl(0, 0%, 7%);
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+  }
+
+  .card-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     padding: 20px;
   }
 
-  /* Card */
-  .card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Adds space between elements */
-    transition: transform 0.2s ease;
-  }
-
-  /* Add hover effect for larger screens */
-  .card:hover {
-    transform: scale(1.05);
-  }
-
-  /* QR Code */
-  .qr-code {
+  .card-image {
     width: 100%;
-    max-width: 200px;
-    border-radius: 10px;
+    height: auto;
+    max-width: 400px; /* Adjust as needed */
   }
 
-  /* Text Content */
-  .text-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .card-content {
+    padding: 20px;
   }
 
-  /* Title */
+  .tag {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
   .title {
-    font-size: 18px;
-    font-weight: 700; /* Bold */
-    color: #1f2937;
-    line-height: 1.4;
+    font-size: 1.5em;
+    margin-bottom: 10px;
   }
 
-  /* Description */
   .description {
-    font-size: 14px;
-    font-weight: 400; /* Regular */
-    color: #6b7280;
-    line-height: 1.6;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
   }
 
-  /* Responsive Design */
-  @media (min-width: 768px) {
+  .author {
+    display: flex;
+    align-items: center;
+  }
+
+  .author-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .author-name {
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  .attribution {
+    font-size: 0.8em;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  .attribution a:hover {
+    text-decoration: underline;
+  }
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets (min-width: 600px) */
+@media (min-width: 600px) {
     .card {
-      max-width: 400px;
-      padding: 30px;
+        max-width: 450px;
     }
-
     .title {
-      font-size: 20px;
+        font-size: 20px;
     }
-
     .description {
-      font-size: 16px;
+        font-size: 16px;
     }
-  }
+}
 
-  @media (min-width: 1024px) {
-    body {
-      padding: 40px;
+/* Larger Screens (min-width: 900px) */
+@media (min-width: 900px) {
+    .card-container {
+        padding: 100px;
     }
-
     .card {
-      max-width: 450px;
-      padding: 40px;
+        max-width: 500px;
     }
-
     .title {
-      font-size: 22px;
+        font-size: 22px;
     }
-
     .description {
-      font-size: 18px;
+        font-size: 18px;
     }
-  }
+}
+
+/* Mobile (max-width: 400px) */
+@media (max-width: 400px) {
+    .card-container {
+        padding: 30px;
+        width: 95%;
+    }
+    .card {
+        max-width: 90%;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .description {
+        font-size: 13px;
+    }
+}
